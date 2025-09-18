@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>2. Resume 생성</h2>
+    <h2>1. Resume 생성</h2>
     <form @submit.prevent="createResume">
       <label>템플릿 ID: <input v-model="store.resumeForm.templateId" required /></label><br />
       <label>이름: <input v-model="store.resumeForm.name" required /></label><br />

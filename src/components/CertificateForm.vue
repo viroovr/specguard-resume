@@ -56,7 +56,7 @@
 
       <button
         type="button"
-        @click="store.removeCertificate(index)"
+        @click="removeCertificate(index)"
         class="mt-2 text-red-600 text-sm"
       >
         삭제
@@ -66,7 +66,7 @@
     <div class="flex gap-2">
       <button
         type="button"
-        @click="store.addCertificate"
+        @click="addCertificate()"
         class="px-4 py-2 bg-blue-500 text-white rounded"
       >
         + 자격증 추가
@@ -85,18 +85,29 @@
 
 <script setup>
 import { onMounted } from "vue";
-import { useResumeStore } from "@/stores/resumeStore";
+import { useResumeStore } from "@/store/resume";
 
 const store = useResumeStore();
 const API_BASE = "http://localhost:8080/api/v1/resumes";
 
+function emptyCert() {
+  return { 
+    id: null,
+      certificateName: '',
+      certificateNumber: '',
+      issuer: '',
+      issuedDate: '',
+      certUrl: '',
+  };
+}
 
+function addCertificate() { store.certificates.push(emptyCert()); }
+function removeCertificate(idx) {
+  if (store.links.length > 1) store.certificates.splice(idx, 1);
+}
 // 제출
 async function save() {
-  const payload = {
-    certificates: store.certificates, // 필요 시 동일 처리
-  };
-
+  const payload = store.certificates;
   try {
     console.log(payload);
 

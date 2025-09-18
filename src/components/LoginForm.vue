@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>로그인</h2>
+        <h2>만든거 있다면 로그인</h2>
         <label>Email : <input v-model="store.loginForm.email" type="text" /></label> <br />
         <label>Template ID : <input v-model="store.loginForm.templateId" type="text" /></label> <br />
         <label>Password : <input v-model="store.loginForm.password" type="password" /></label> <br />

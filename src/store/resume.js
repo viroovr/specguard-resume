@@ -94,11 +94,11 @@ export const useResumeStore = defineStore("resume", () => {
     // 자격증 리스트
     certificates.value = (data.certificates || []).map(cert => ({
       id: cert.id,
-      name: cert.certificateName,
-      number: cert.certificateNumber,
+      certificateName: cert.certificateName,
+      certificateNumber: cert.certificateNumber,
       issuer: cert.issuer,
       issuedDate: cert.issuedDate,
-      url: cert.certUrl,
+      certUrl: cert.certUrl,
     }));
 
     // 링크 리스트

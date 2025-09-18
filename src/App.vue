@@ -1,9 +1,10 @@
 <template>
   <div>
-    <LoginForm />
     <ResumeForm />
+    <LoginForm />
     <ResumeBasicForm />
     <EduExpLinkForm />
+    <CertificateForm />
     <TemplateItemsForm />
     <SubmitResume />
     <h2>결과</h2>
@@ -19,6 +20,7 @@ import ResumeBasicForm from "@/components/ResumeBasicForm.vue";
 import EduExpLinkForm from "@/components/EduExpLinkForm.vue";
 import TemplateItemsForm from "@/components/TemplateResponse.vue";
 import SubmitResume from "@/components/SubmitResume.vue";
+import CertificateForm from "@/components/CertificateForm.vue";
 
 const store = useResumeStore();
 </script>
